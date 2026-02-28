@@ -2,6 +2,8 @@
 
 An AI-powered app that compares two public professional profiles (LinkedIn, GitHub, portfolios, etc.) in an anime-style 1v1 battle. Built for the Track 2 Hackathon, integrating **Bright Data**, **ActionBook**, and **Acontext**.
 
+<img width="1273" height="670" alt="image" src="https://github.com/user-attachments/assets/d45366a5-77cf-4525-b4b1-fc648a50ca89" />
+
 ## How It Works
 
 1. **Scrape** -- Collects public profile data from LinkedIn, GitHub, Wikipedia, or portfolio sites using Bright Data and ActionBook.
