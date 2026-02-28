@@ -15,50 +15,50 @@ const bodyVariants: Variants = {
   entering: { opacity: 0, x: 0, y: 0, rotate: 0 },
   idle: {
     opacity: 1,
-    x: [0, 4, 0, -3, 0],
-    y: [0, -5, -2, -7, 0],
-    rotate: [0, 1, 0, -1, 0],
+    x: [0, 3, -1, 4, 0, -3, 1, 0],
+    y: [0, -4, -7, -3, -8, -5, -2, 0],
+    rotate: [0, 0.8, -0.3, 1, -0.5, 0.3, -0.8, 0],
     transition: {
-      x: { duration: 3, repeat: Infinity, ease: 'easeInOut' },
-      y: { duration: 2.4, repeat: Infinity, ease: 'easeInOut' },
-      rotate: { duration: 3.2, repeat: Infinity, ease: 'easeInOut' },
+      x: { duration: 5, repeat: Infinity, ease: 'easeInOut' },
+      y: { duration: 3.6, repeat: Infinity, ease: 'easeInOut' },
+      rotate: { duration: 4.8, repeat: Infinity, ease: 'easeInOut' },
     },
   },
   attacking: {
     opacity: 1,
-    x: [0, -15, 70],
-    y: [0, 4, -6],
-    rotate: [0, 3, -4],
+    x: [0, -20, -12, 90, 75],
+    y: [0, 6, 3, -10, -4],
+    rotate: [0, 4, 2, -6, -3],
     transition: {
-      duration: 0.4,
-      times: [0, 0.25, 1],
-      ease: 'easeOut',
+      duration: 0.55,
+      times: [0, 0.2, 0.35, 0.75, 1],
+      ease: [0.25, 0.1, 0.25, 1],
     },
   },
   hit: {
     opacity: 1,
-    x: [0, -35, -20, -28, -10, 0],
-    y: [0, 6, -2, 3, 0],
-    rotate: [0, -6, 3, -2, 0],
-    transition: { duration: 0.5, ease: 'easeOut' },
+    x: [0, -40, -15, -30, -8, -18, -3, 0],
+    y: [0, 8, -3, 5, -1, 2, 0, 0],
+    rotate: [0, -8, 4, -5, 2, -1, 0.5, 0],
+    transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] },
   },
   defeated: {
-    opacity: 0.45,
-    x: -10,
-    y: 30,
-    rotate: 18,
+    opacity: 0.4,
+    x: -12,
+    y: 35,
+    rotate: 20,
     filter: 'grayscale(0.9)',
-    transition: { duration: 1, ease: 'easeIn' },
+    transition: { duration: 1.2, ease: [0.4, 0, 0.2, 1] },
   },
   winner: {
     opacity: 1,
-    x: [0, 3, -3, 0],
-    y: [0, -18, -4, -18, 0],
-    rotate: [0, -2, 2, -2, 0],
+    x: [0, 4, -2, 3, -4, 2, 0],
+    y: [0, -22, -6, -20, -8, -18, 0],
+    rotate: [0, -3, 2, -2, 3, -1, 0],
     transition: {
-      y: { duration: 0.7, repeat: Infinity, ease: 'easeInOut' },
-      x: { duration: 1.4, repeat: Infinity, ease: 'easeInOut' },
-      rotate: { duration: 1.4, repeat: Infinity, ease: 'easeInOut' },
+      y: { duration: 1.0, repeat: Infinity, ease: 'easeInOut' },
+      x: { duration: 1.8, repeat: Infinity, ease: 'easeInOut' },
+      rotate: { duration: 1.6, repeat: Infinity, ease: 'easeInOut' },
     },
   },
 };
@@ -66,151 +66,151 @@ const bodyVariants: Variants = {
 // --- HEAD ---
 const headVariants: Variants = {
   idle: {
-    rotate: [0, 3, 0, -2, 0],
-    y: [0, -1, 1, -1, 0],
-    transition: { duration: 2.8, repeat: Infinity, ease: 'easeInOut' },
+    rotate: [0, 2.5, -1, 3, -2, 0.5, 0],
+    y: [0, -1.5, 0.5, -2, 0, -1, 0],
+    transition: { duration: 4.2, repeat: Infinity, ease: 'easeInOut' },
   },
   attacking: {
-    rotate: [0, 5, -8],
-    y: [0, 0, -3],
-    transition: { duration: 0.35, times: [0, 0.3, 1] },
+    rotate: [0, 6, 3, -12, -8],
+    y: [0, 1, 0, -5, -3],
+    transition: { duration: 0.5, times: [0, 0.2, 0.35, 0.75, 1], ease: 'easeOut' },
   },
   hit: {
-    rotate: [0, -12, 6, -3, 0],
-    y: [0, 4, -2, 1, 0],
-    transition: { duration: 0.4, ease: 'easeOut' },
+    rotate: [0, -15, 8, -6, 3, -1, 0],
+    y: [0, 6, -3, 3, -1, 0.5, 0],
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
   },
   defeated: {
-    rotate: 25, y: 8,
-    transition: { duration: 1 },
+    rotate: 28, y: 10,
+    transition: { duration: 1.2, ease: [0.4, 0, 0.2, 1] },
   },
   winner: {
-    rotate: [0, -5, 5, 0],
-    y: [0, -3, -3, 0],
-    transition: { duration: 0.8, repeat: Infinity, ease: 'easeInOut' },
+    rotate: [0, -6, 3, 6, -3, 0],
+    y: [0, -4, -1, -4, -1, 0],
+    transition: { duration: 1.0, repeat: Infinity, ease: 'easeInOut' },
   },
 };
 
 // --- TORSO ---
 const torsoVariants: Variants = {
   idle: {
-    scaleY: [1, 1.015, 1, 0.99, 1],
-    rotate: [0, 0.5, 0, -0.5, 0],
-    transition: { duration: 2.6, repeat: Infinity, ease: 'easeInOut' },
+    scaleY: [1, 1.018, 1.005, 0.988, 1.01, 0.995, 1],
+    rotate: [0, 0.6, -0.2, 0.4, -0.4, 0.2, 0],
+    transition: { duration: 3.8, repeat: Infinity, ease: 'easeInOut' },
   },
   attacking: {
-    scaleY: [1, 0.95, 1.04],
-    rotate: [0, 2, -6],
-    transition: { duration: 0.35, times: [0, 0.3, 1] },
+    scaleY: [1, 0.93, 0.96, 1.06, 1.02],
+    rotate: [0, 3, 1, -8, -5],
+    transition: { duration: 0.5, times: [0, 0.2, 0.35, 0.75, 1], ease: 'easeOut' },
   },
   hit: {
-    scaleY: [1, 0.92, 1.02, 1],
-    rotate: [0, 4, -2, 0],
-    transition: { duration: 0.4 },
+    scaleY: [1, 0.88, 1.04, 0.95, 1.01, 1],
+    rotate: [0, 5, -3, 2, -0.5, 0],
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
   },
-  defeated: { scaleY: 0.92, rotate: 5, transition: { duration: 1 } },
+  defeated: { scaleY: 0.9, rotate: 6, transition: { duration: 1.2, ease: [0.4, 0, 0.2, 1] } },
   winner: {
-    scaleY: [1, 1.04, 1],
-    transition: { duration: 0.6, repeat: Infinity, ease: 'easeInOut' },
+    scaleY: [1, 1.05, 0.98, 1.03, 1],
+    transition: { duration: 0.8, repeat: Infinity, ease: 'easeInOut' },
   },
 };
 
 // --- LEAD ARM (punching arm) ---
 const leadArmVariants: Variants = {
   idle: {
-    rotate: [-15, -25, -15, -20, -15],
-    x: [0, 2, 0, -1, 0],
-    transition: { duration: 2, repeat: Infinity, ease: 'easeInOut' },
+    rotate: [-15, -22, -18, -25, -13, -20, -15],
+    x: [0, 1.5, -0.5, 2, -1, 0.5, 0],
+    transition: { duration: 3.2, repeat: Infinity, ease: 'easeInOut' },
   },
   attacking: {
-    rotate: [-15, 10, -110],
-    x: [0, -5, 28],
-    y: [0, 2, -8],
-    transition: { duration: 0.4, times: [0, 0.3, 1], ease: 'easeOut' },
+    rotate: [-15, 15, 8, -120, -105],
+    x: [0, -8, -4, 35, 28],
+    y: [0, 3, 1, -12, -6],
+    transition: { duration: 0.55, times: [0, 0.2, 0.35, 0.75, 1], ease: [0.25, 0.1, 0.25, 1] },
   },
   hit: {
-    rotate: [-15, 30, 10, -15],
-    x: [0, -6, -2, 0],
-    transition: { duration: 0.4, ease: 'easeOut' },
+    rotate: [-15, 35, 5, 20, -5, -15],
+    x: [0, -8, -2, -5, 0, 0],
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
   },
-  defeated: { rotate: 50, x: -5, y: 10, transition: { duration: 1 } },
+  defeated: { rotate: 55, x: -6, y: 12, transition: { duration: 1.2, ease: [0.4, 0, 0.2, 1] } },
   winner: {
-    rotate: [-150, -140, -150],
-    x: [0, 3, 0],
-    transition: { duration: 0.8, repeat: Infinity, ease: 'easeInOut' },
+    rotate: [-155, -138, -148, -140, -155],
+    x: [0, 4, 1, 3, 0],
+    transition: { duration: 1.0, repeat: Infinity, ease: 'easeInOut' },
   },
 };
 
 // --- REAR ARM (guard arm) ---
 const rearArmVariants: Variants = {
   idle: {
-    rotate: [10, 18, 10, 14, 10],
-    x: [0, -1, 0, 1, 0],
-    transition: { duration: 2.3, repeat: Infinity, ease: 'easeInOut', delay: 0.4 },
+    rotate: [10, 16, 12, 19, 11, 15, 10],
+    x: [0, -0.8, 0.3, -1, 0.5, -0.3, 0],
+    transition: { duration: 3.6, repeat: Infinity, ease: 'easeInOut', delay: 0.4 },
   },
   attacking: {
-    rotate: [10, 25, 5],
-    x: [0, 2, -3],
-    transition: { duration: 0.35, times: [0, 0.3, 1] },
+    rotate: [10, 30, 22, 8, 5],
+    x: [0, 3, 1, -4, -3],
+    transition: { duration: 0.5, times: [0, 0.2, 0.35, 0.75, 1], ease: 'easeOut' },
   },
   hit: {
-    rotate: [10, -20, 5, 10],
-    x: [0, -4, 0, 0],
-    transition: { duration: 0.4, ease: 'easeOut' },
+    rotate: [10, -25, 8, -10, 3, 10],
+    x: [0, -6, -1, -3, 0, 0],
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
   },
-  defeated: { rotate: 40, x: 5, y: 8, transition: { duration: 1 } },
+  defeated: { rotate: 45, x: 6, y: 10, transition: { duration: 1.2, ease: [0.4, 0, 0.2, 1] } },
   winner: {
-    rotate: [150, 140, 150],
-    x: [0, -3, 0],
-    transition: { duration: 0.8, repeat: Infinity, ease: 'easeInOut' },
+    rotate: [155, 138, 148, 142, 155],
+    x: [0, -4, -1, -3, 0],
+    transition: { duration: 1.0, repeat: Infinity, ease: 'easeInOut' },
   },
 };
 
 // --- FRONT LEG ---
 const frontLegVariants: Variants = {
   idle: {
-    rotate: [0, -4, 0, 2, 0],
-    y: [0, 1, 0, -1, 0],
-    transition: { duration: 2.5, repeat: Infinity, ease: 'easeInOut' },
+    rotate: [0, -3, 1, -4, 2, -1, 0],
+    y: [0, 0.8, -0.5, 1, -0.8, 0.3, 0],
+    transition: { duration: 3.8, repeat: Infinity, ease: 'easeInOut' },
   },
   attacking: {
-    rotate: [0, 5, -18],
-    y: [0, 0, -4],
-    transition: { duration: 0.35, times: [0, 0.3, 1] },
+    rotate: [0, 6, 3, -22, -15],
+    y: [0, 1, 0, -6, -3],
+    transition: { duration: 0.5, times: [0, 0.2, 0.35, 0.75, 1], ease: 'easeOut' },
   },
   hit: {
-    rotate: [0, 10, -4, 0],
-    y: [0, 3, 0, 0],
-    transition: { duration: 0.4 },
+    rotate: [0, 12, -5, 6, -2, 0],
+    y: [0, 4, -1, 2, 0, 0],
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
   },
-  defeated: { rotate: 15, y: 5, transition: { duration: 1 } },
+  defeated: { rotate: 18, y: 6, transition: { duration: 1.2, ease: [0.4, 0, 0.2, 1] } },
   winner: {
-    rotate: [0, -6, 0],
-    transition: { duration: 0.6, repeat: Infinity, ease: 'easeInOut' },
+    rotate: [0, -8, 2, -6, 0],
+    transition: { duration: 0.8, repeat: Infinity, ease: 'easeInOut' },
   },
 };
 
 // --- BACK LEG ---
 const backLegVariants: Variants = {
   idle: {
-    rotate: [0, 3, 0, -3, 0],
-    y: [0, -1, 0, 1, 0],
-    transition: { duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 },
+    rotate: [0, 2, -1, 3, -2, 1, 0],
+    y: [0, -0.8, 0.3, -1, 0.5, -0.3, 0],
+    transition: { duration: 4.0, repeat: Infinity, ease: 'easeInOut', delay: 0.6 },
   },
   attacking: {
-    rotate: [0, -8, 12],
-    y: [0, -2, 2],
-    transition: { duration: 0.35, times: [0, 0.3, 1] },
+    rotate: [0, -10, -5, 15, 10],
+    y: [0, -3, -1, 3, 1],
+    transition: { duration: 0.5, times: [0, 0.2, 0.35, 0.75, 1], ease: 'easeOut' },
   },
   hit: {
-    rotate: [0, -6, 8, 0],
-    y: [0, -2, 1, 0],
-    transition: { duration: 0.4 },
+    rotate: [0, -8, 10, -4, 2, 0],
+    y: [0, -3, 2, -1, 0.5, 0],
+    transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
   },
-  defeated: { rotate: 25, y: 3, transition: { duration: 1 } },
+  defeated: { rotate: 28, y: 4, transition: { duration: 1.2, ease: [0.4, 0, 0.2, 1] } },
   winner: {
-    rotate: [0, 5, 0],
-    transition: { duration: 0.6, repeat: Infinity, ease: 'easeInOut', delay: 0.15 },
+    rotate: [0, 7, -2, 5, 0],
+    transition: { duration: 0.8, repeat: Infinity, ease: 'easeInOut', delay: 0.15 },
   },
 };
 
@@ -218,16 +218,16 @@ const backLegVariants: Variants = {
 const fistGlowVariants: Variants = {
   idle: { scale: 0, opacity: 0 },
   attacking: {
-    scale: [0, 1.8, 1, 1.5, 1.2],
-    opacity: [0, 1, 0.6, 0.9, 0.7],
-    transition: { duration: 0.5, repeat: Infinity, repeatDelay: 0.1 },
+    scale: [0, 0.5, 2.0, 1.2, 1.6, 1.3],
+    opacity: [0, 0.3, 1, 0.7, 0.9, 0.75],
+    transition: { duration: 0.6, repeat: Infinity, repeatDelay: 0.05 },
   },
   hit: { scale: 0, opacity: 0 },
   defeated: { scale: 0, opacity: 0 },
   winner: {
-    scale: [1, 1.4, 1],
-    opacity: [0.5, 0.2, 0.5],
-    transition: { duration: 1, repeat: Infinity },
+    scale: [0.8, 1.5, 0.9, 1.3, 0.8],
+    opacity: [0.4, 0.15, 0.4, 0.2, 0.4],
+    transition: { duration: 1.4, repeat: Infinity, ease: 'easeInOut' },
   },
 };
 
@@ -252,35 +252,35 @@ export function RobotFighter({ avatarUrl, name, side, state, accentColor }: Robo
         {state === 'hit' && (
           <motion.div
             className="absolute inset-0 rounded-xl z-50 pointer-events-none"
-            initial={{ opacity: 0.7, scale: 1.1 }}
-            animate={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.45 }}
-            style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.6) 0%, rgba(239,68,68,0.2) 40%, transparent 70%)' }}
+            initial={{ opacity: 0.85, scale: 1.15 }}
+            animate={{ opacity: [0.85, 0.3, 0.5, 0], scale: [1.15, 1.05, 1.08, 0.95] }}
+            transition={{ duration: 0.55, ease: 'easeOut' }}
+            style={{ background: 'radial-gradient(circle, rgba(239,68,68,0.7) 0%, rgba(239,68,68,0.25) 40%, transparent 70%)' }}
           />
         )}
 
         {/* Impact sparks on hit */}
         {state === 'hit' && (
           <>
-            {[...Array(5)].map((_, i) => (
+            {[...Array(8)].map((_, i) => (
               <motion.div
                 key={i}
                 className="absolute rounded-full z-50 pointer-events-none"
                 style={{
-                  top: 90 + Math.random() * 40,
-                  left: isLeft ? 20 + Math.random() * 30 : 100 + Math.random() * 30,
-                  width: 4 + Math.random() * 4,
-                  height: 4 + Math.random() * 4,
-                  background: i % 2 === 0 ? '#fbbf24' : accentColor,
+                  top: 80 + Math.random() * 50,
+                  left: isLeft ? 15 + Math.random() * 40 : 95 + Math.random() * 40,
+                  width: 3 + Math.random() * 6,
+                  height: 3 + Math.random() * 6,
+                  background: i % 3 === 0 ? '#fbbf24' : i % 3 === 1 ? '#ffffff' : accentColor,
                 }}
-                initial={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 1, scale: 1.2 }}
                 animate={{
                   opacity: 0,
                   scale: 0,
-                  x: (Math.random() - 0.5) * 60,
-                  y: (Math.random() - 0.5) * 40,
+                  x: (Math.random() - 0.5) * 80,
+                  y: -20 + (Math.random() - 0.3) * 60,
                 }}
-                transition={{ duration: 0.35 + Math.random() * 0.2 }}
+                transition={{ duration: 0.3 + Math.random() * 0.35, ease: 'easeOut', delay: Math.random() * 0.08 }}
               />
             ))}
           </>

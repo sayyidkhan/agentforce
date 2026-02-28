@@ -197,21 +197,27 @@ export function BattleArena({ duel }: BattleArenaProps) {
         setRobot2State('idle');
         soundFX.play('round');
       }, t);
-      t += 1500;
+      t += 1600;
       at(() => setRoundAnnounce(null), t);
+      t += 200;
 
-      // Roast appears — attacker lunges
+      // Roast appears — attacker lunges with slight delay for anticipation
       at(() => {
         setCurrentRoast(round);
         setActiveAttacker(round.attacker);
-        setAttackerState('attacking');
         setBattleLog(prev => [...prev, {
           round: round.roundNumber || idx + 1,
           attacker: round.attacker,
           text: round.roast,
         }]);
       }, t);
-      const roastDisplayTime = Math.max(6000, round.roast.length * 40 + 2000);
+      t += 400;
+
+      // Attacker lunges after roast text starts appearing
+      at(() => {
+        setAttackerState('attacking');
+      }, t);
+      const roastDisplayTime = Math.max(5500, round.roast.length * 38 + 1800);
       t += roastDisplayTime;
 
       // Hit lands — defender recoils
@@ -228,20 +234,20 @@ export function BattleArena({ duel }: BattleArenaProps) {
           setDamagePopup({ side: 'left', amount: Math.round(round.damage) });
         }
       }, t);
-      t += 400;
+      t += 500;
       at(() => {
         setIsShaking(false);
         setAttackerState('idle');
       }, t);
-      t += 300;
+      t += 400;
       at(() => setDefenderState('idle'), t);
-      t += 300;
+      t += 350;
       at(() => {
         setDamagePopup(null);
         setCurrentRoast(null);
         setActiveAttacker(null);
       }, t);
-      t += 2000;
+      t += 1800;
     });
 
     // --- K.O. ---
