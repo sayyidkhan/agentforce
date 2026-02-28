@@ -1,0 +1,457 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.95);
+  background-color: #0F0F1A;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0F0F1A 0%, #1A1A2E 50%, #16213E 100%);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Anime-style glowing effects */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5),
+              0 0 40px rgba(139, 92, 246, 0.3),
+              0 0 60px rgba(139, 92, 246, 0.1);
+}
+
+.glow-pink {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.5),
+              0 0 40px rgba(236, 72, 153, 0.3),
+              0 0 60px rgba(236, 72, 153, 0.1);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5),
+              0 0 40px rgba(59, 130, 246, 0.3),
+              0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+.glow-gold {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.5),
+              0 0 40px rgba(245, 158, 11, 0.3),
+              0 0 60px rgba(245, 158, 11, 0.1);
+}
+
+/* VS text animation */
+.vs-text {
+  background: linear-gradient(135deg, #F59E0B 0%, #EF4444 50%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: vs-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes vs-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.9; }
+}
+
+/* Lightning effect */
+.lightning-effect {
+  position: relative;
+}
+
+.lightning-effect::before,
+.lightning-effect::after {
+  content: '⚡';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  animation: lightning-flash 0.5s ease-in-out infinite;
+}
+
+.lightning-effect::before {
+  left: -2rem;
+}
+
+.lightning-effect::after {
+  right: -2rem;
+}
+
+@keyframes lightning-flash {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* Power bar animation */
+.power-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+.power-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: power-shine 2s ease-in-out infinite;
+}
+
+@keyframes power-shine {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+
+/* Card hover effect */
+.battle-card {
+  transition: all 0.3s ease;
+  background: linear-gradient(145deg, #1A1A2E 0%, #16213E 100%);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.battle-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(139, 92, 246, 0.5);
+}
+
+/* Winner aura effect */
+.winner-aura {
+  position: relative;
+}
+
+.winner-aura::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: linear-gradient(45deg, #F59E0B, #EF4444, #F59E0B);
+  border-radius: inherit;
+  z-index: -1;
+  animation: aura-pulse 2s ease-in-out infinite;
+  filter: blur(15px);
+}
+
+@keyframes aura-pulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.02); }
+}
+
+/* Radar chart container */
+.radar-container {
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
+}
+
+/* MK-style screen shake */
+@keyframes screen-shake {
+  0%, 100% { transform: translate(0); }
+  10% { transform: translate(-6px, -4px); }
+  20% { transform: translate(6px, 4px); }
+  30% { transform: translate(-4px, 6px); }
+  40% { transform: translate(4px, -6px); }
+  50% { transform: translate(-6px, 4px); }
+  60% { transform: translate(6px, -4px); }
+  70% { transform: translate(-4px, -6px); }
+  80% { transform: translate(4px, 6px); }
+  90% { transform: translate(-6px, -4px); }
+}
+
+.screen-shake {
+  animation: screen-shake 0.4s ease-in-out;
+}
+
+/* Health bar glow pulse */
+@keyframes hp-pulse {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+
+.hp-critical {
+  animation: hp-pulse 0.5s ease-in-out infinite;
+}
+
+/* Arena floor gradient */
+.arena-floor {
+  background: radial-gradient(ellipse at 50% 100%, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+}
+
+/* MK-style text stroke */
+.mk-text-stroke {
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.8);
+  paint-order: stroke fill;
+}
+
+/* Robot fighter arena ground */
+.arena-ground {
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.3) 100%);
+}
+
+/* Robot metallic shine sweep */
+@keyframes robot-shine {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.robot-shine {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  background-size: 200% 100%;
+  animation: robot-shine 3s ease-in-out infinite;
+}
+
+/* ===== EPIC BATTLE EFFECTS ===== */
+
+/* Floating spark particles */
+@keyframes spark-float {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 1; }
+  25% { transform: translateY(-30vh) translateX(20px) scale(0.8); opacity: 0.8; }
+  50% { transform: translateY(-60vh) translateX(-15px) scale(0.5); opacity: 0.6; }
+  75% { transform: translateY(-80vh) translateX(10px) scale(0.3); opacity: 0.3; }
+  100% { transform: translateY(-100vh) translateX(-5px) scale(0); opacity: 0; }
+}
+
+.spark-particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: spark-float linear infinite;
+  filter: blur(0.5px);
+}
+
+/* Lightning bolt flash */
+@keyframes bolt-flash {
+  0%, 100% { opacity: 0; }
+  3% { opacity: 1; }
+  6% { opacity: 0; }
+  8% { opacity: 0.8; }
+  10% { opacity: 0; }
+  50% { opacity: 0; }
+  53% { opacity: 0.6; }
+  55% { opacity: 0; }
+}
+
+.lightning-bolt {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(139, 180, 255, 0.9)) drop-shadow(0 0 20px rgba(100, 150, 255, 0.5));
+  z-index: 1;
+}
+
+/* Energy shockwave ring around VS */
+@keyframes shockwave {
+  0% { transform: scale(0.5); opacity: 0.8; border-width: 3px; }
+  50% { opacity: 0.4; }
+  100% { transform: scale(2.5); opacity: 0; border-width: 1px; }
+}
+
+.shockwave-ring {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid;
+  pointer-events: none;
+  animation: shockwave 2s ease-out infinite;
+}
+
+/* Fire ember particles - rising from bottom with flickering glow */
+@keyframes ember-rise {
+  0% { transform: translateY(0) translateX(0) scale(1); opacity: 0.9; filter: blur(0); }
+  20% { transform: translateY(-20vh) translateX(15px) scale(0.9); opacity: 1; }
+  40% { transform: translateY(-40vh) translateX(-10px) scale(0.7); opacity: 0.7; filter: blur(0.5px); }
+  60% { transform: translateY(-55vh) translateX(8px) scale(0.5); opacity: 0.5; }
+  80% { transform: translateY(-70vh) translateX(-5px) scale(0.3); opacity: 0.3; filter: blur(1px); }
+  100% { transform: translateY(-90vh) translateX(3px) scale(0); opacity: 0; }
+}
+
+.fire-ember {
+  position: absolute;
+  bottom: -5px;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: ember-rise ease-out infinite;
+}
+
+/* Edge fire glow - bottom edges */
+@keyframes edge-fire {
+  0%, 100% { opacity: 0.4; }
+  25% { opacity: 0.7; }
+  50% { opacity: 0.5; }
+  75% { opacity: 0.8; }
+}
+
+.edge-fire-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 30%;
+  background: radial-gradient(ellipse at 0% 100%, rgba(239, 68, 68, 0.25) 0%, rgba(245, 158, 11, 0.15) 30%, transparent 70%);
+  pointer-events: none;
+  animation: edge-fire 3s ease-in-out infinite;
+}
+
+.edge-fire-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40%;
+  height: 30%;
+  background: radial-gradient(ellipse at 100% 100%, rgba(236, 72, 153, 0.25) 0%, rgba(139, 92, 246, 0.15) 30%, transparent 70%);
+  pointer-events: none;
+  animation: edge-fire 3s ease-in-out infinite 1.5s;
+}
+
+/* Big dramatic lightning bolt that spans the screen */
+@keyframes mega-bolt {
+  0%, 92%, 100% { opacity: 0; }
+  93% { opacity: 0.9; }
+  94% { opacity: 0.2; }
+  95% { opacity: 1; }
+  96% { opacity: 0; }
+  97% { opacity: 0.7; }
+  98% { opacity: 0; }
+}
+
+.mega-lightning {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 0 12px rgba(180, 200, 255, 1)) drop-shadow(0 0 30px rgba(120, 160, 255, 0.7)) drop-shadow(0 0 60px rgba(100, 140, 255, 0.4));
+}
+
+/* Horizontal electric arc crackle */
+@keyframes h-arc {
+  0%, 100% { opacity: 0; }
+  10% { opacity: 0.8; }
+  12% { opacity: 0; }
+  30% { opacity: 0; }
+  32% { opacity: 1; }
+  34% { opacity: 0; }
+  60% { opacity: 0; }
+  62% { opacity: 0.6; }
+  63% { opacity: 0; }
+}
+
+.h-electric-arc {
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px rgba(139, 180, 255, 0.8));
+}
+
+/* Electric arc between fighters */
+@keyframes arc-crackle {
+  0%, 100% { opacity: 0.3; d: path('M0,25 Q15,5 30,25 Q45,45 60,25'); }
+  15% { opacity: 1; d: path('M0,25 Q10,0 30,20 Q50,50 60,25'); }
+  30% { opacity: 0.5; d: path('M0,25 Q20,10 30,30 Q40,40 60,25'); }
+  45% { opacity: 0.9; d: path('M0,25 Q12,45 30,15 Q48,5 60,25'); }
+  60% { opacity: 0.4; d: path('M0,25 Q18,8 30,25 Q42,42 60,25'); }
+  75% { opacity: 1; d: path('M0,25 Q8,40 30,22 Q52,10 60,25'); }
+  90% { opacity: 0.6; d: path('M0,25 Q22,2 30,28 Q38,48 60,25'); }
+}
+
+/* VS energy glow pulse */
+@keyframes vs-energy {
+  0%, 100% {
+    text-shadow:
+      0 0 10px rgba(245, 158, 11, 0.8),
+      0 0 30px rgba(239, 68, 68, 0.6),
+      0 0 60px rgba(245, 158, 11, 0.4),
+      0 0 90px rgba(239, 68, 68, 0.2);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(245, 158, 11, 1),
+      0 0 50px rgba(239, 68, 68, 0.8),
+      0 0 80px rgba(245, 158, 11, 0.6),
+      0 0 120px rgba(239, 68, 68, 0.4);
+  }
+}
+
+.vs-energy-text {
+  animation: vs-energy 1.5s ease-in-out infinite, vs-pulse 1.5s ease-in-out infinite;
+}
+
+/* Button energy charge */
+@keyframes btn-energy-sweep {
+  0% { left: -100%; opacity: 0.7; }
+  50% { left: 100%; opacity: 0.3; }
+  100% { left: 200%; opacity: 0; }
+}
+
+.btn-energy {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-energy::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: btn-energy-sweep 2.5s ease-in-out infinite;
+}
+
+/* Radial energy burst behind VS */
+@keyframes energy-burst {
+  0% { transform: scale(0.8) rotate(0deg); opacity: 0.3; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 0.6; }
+  100% { transform: scale(0.8) rotate(360deg); opacity: 0.3; }
+}
+
+.energy-burst {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(245, 158, 11, 0.3) 30deg,
+    transparent 60deg,
+    rgba(239, 68, 68, 0.3) 120deg,
+    transparent 150deg,
+    rgba(245, 158, 11, 0.3) 210deg,
+    transparent 240deg,
+    rgba(239, 68, 68, 0.3) 300deg,
+    transparent 330deg
+  );
+  border-radius: 50%;
+  animation: energy-burst 4s linear infinite;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1A1A2E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8B5CF6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED;
+}
