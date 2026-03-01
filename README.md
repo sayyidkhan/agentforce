@@ -92,3 +92,7 @@ Starts on `http://localhost:5173`.
 | `GET` | `/api/duel/health` | Service health check |
 
 Real-time progress is streamed over WebSocket -- clients subscribe to a session ID and receive stage updates (`scraping`, `normalizing`, `scoring`, `transforming`, `generating_commentary`, `complete`).
+
+## Inspired From
+
+https://devpost.com/software/koyak-kombat
